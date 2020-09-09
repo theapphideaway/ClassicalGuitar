@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClassicalGuitar.MainPage"
+             xmlns:views="clr-namespace:ClassicalGuitar.Views"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+             NavigationPage.HasNavigationBar="False"
+            BarBackgroundColor="#8d600a"
+            SelectedTabColor="White"
+            UnselectedTabColor="Gray">
+
+    <TabbedPage.Children>
+        <NavigationPage Title="Guitars" Icon="baseline_home_black_18dp.png">
+            <x:Arguments>
+                <views:GuitarsPage/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Search" Icon="baseline_search_black_2x_18dp.png">
+            <x:Arguments>
+                <views:SearchPage/>
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+
+
+
+</TabbedPage>
