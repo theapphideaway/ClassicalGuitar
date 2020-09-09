@@ -1,4 +1,5 @@
-﻿using ClassicalGuitar.ViewModels;
+﻿using ClassicalGuitar.Models;
+using ClassicalGuitar.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,8 @@ namespace ClassicalGuitar.Views
                 if (e.Item == null) return;
                 if (sender is ListView lv) lv.SelectedItem = null;
             };
+
+               
         }
     }
 }

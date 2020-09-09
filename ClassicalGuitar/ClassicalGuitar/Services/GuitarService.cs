@@ -19,8 +19,8 @@ namespace ClassicalGuitar.Services
                 Console.WriteLine(response);
                 GuitarsResponse responseObject = Newtonsoft.Json.JsonConvert.DeserializeObject<GuitarsResponse>(response);
                 Console.WriteLine(responseObject);
+                return responseObject;
             }
-                return new GuitarsResponse();
         }
     }
 }

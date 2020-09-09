@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ClassicalGuitar.ViewModels
 {
-    class FavoritesViewModel
+    class FavoritesViewModel: BaseViewModel
     {
     }
 }

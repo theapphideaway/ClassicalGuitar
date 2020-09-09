@@ -4,7 +4,31 @@
              x:Class="ClassicalGuitar.Views.GuitarsPage"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
+        <StackLayout>
+        <Label x:Name="loadingLabel" 
+               Text="Loading"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"
+               IsVisible="true"
+               />
         <ListView x:Name="guitarLV"
-            ItemsSource="{Binding Items}"/>
+            ItemsSource="{Binding Guitars}"
+                  HasUnevenRows="true" 
+                  SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Margin="30">
+                            <StackLayout>
+                                <Label Text="{Binding GuitarName}"/>
+                                <Label Text="Hello world"/>
+                                <Label Text="This is a test"/>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

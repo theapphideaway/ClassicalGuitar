@@ -1,4 +1,5 @@
-﻿using ClassicalGuitar.Services;
+﻿using ClassicalGuitar.Models;
+using ClassicalGuitar.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -6,23 +7,25 @@ using System.Text;
 
 namespace ClassicalGuitar.ViewModels
 {
-    class GuitarsViewModel
+    class GuitarsViewModel: BaseViewModel
     {
         private GuitarService guitarService = new GuitarService();
-        public ObservableCollection<string> Items { get; set; } = new ObservableCollection<string>();
+        public ObservableCollection<Guitar> Guitars { get; set; } = new ObservableCollection<Guitar>();
 
         public GuitarsViewModel()
         {
             GetGuitars();
 
-            Items.Add("One");
-            Items.Add("Two");
-            Items.Add("Three");
         }
 
         public async void GetGuitars()
         {
-            await guitarService.GetAllGuitarsAsync();
+            var response = await guitarService.GetAllGuitarsAsync();
+            Console.WriteLine(response);
+            foreach (var guitar in response.Guitars)
+            {
+                Guitars.Add(guitar);
+            }
         }
     }
 }
