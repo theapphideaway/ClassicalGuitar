@@ -19,16 +19,21 @@ namespace ClassicalGuitar.Views
         public GuitarsPage()
         {
             InitializeComponent();
-            using (ServiceProvider container = App.RegisterServices())
-            {
-                BindingContext = container.GetRequiredService<GuitarsViewModel>();
-            }
+            InitDependencyInjection();
 
-            //Remove Selected Item Background color but keep selected splash effect
+            //Remove SelectedItem Background color but keep selected splash effect
             guitarLV.ItemTapped += (object sender, ItemTappedEventArgs e) => {
                 if (e.Item == null) return;
                 if (sender is ListView lv) lv.SelectedItem = null;
             };
+        }
+
+        public void InitDependencyInjection()
+        {
+            using (ServiceProvider container = App.RegisterServices())
+            {
+                BindingContext = container.GetRequiredService<GuitarsViewModel>();
+            }
         }
     }
 }
