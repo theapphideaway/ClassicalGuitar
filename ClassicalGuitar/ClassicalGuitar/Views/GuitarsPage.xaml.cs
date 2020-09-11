@@ -22,7 +22,8 @@ namespace ClassicalGuitar.Views
             InitDependencyInjection();
 
             //Remove SelectedItem Background color but keep selected splash effect
-            guitarLV.ItemTapped += (object sender, ItemTappedEventArgs e) => {
+            guitarLV.ItemTapped += (object sender, ItemTappedEventArgs e) =>
+            {
                 if (e.Item == null) return;
                 if (sender is ListView lv) lv.SelectedItem = null;
             };

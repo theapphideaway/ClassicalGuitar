@@ -8,7 +8,7 @@
              NavigationPage.HasNavigationBar="False"
             BarBackgroundColor="#8d600a"
             SelectedTabColor="White"
-            UnselectedTabColor="Gray">
+            UnselectedTabColor="LightGray">
 
     <TabbedPage.Children>
         <NavigationPage Title="Guitars" Icon="baseline_home_black_18dp.png">
@@ -19,6 +19,11 @@
         <NavigationPage Title="Search" Icon="baseline_search_black_2x_18dp.png">
             <x:Arguments>
                 <views:SearchPage/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Favorites" Icon="baseline_star_black_18dp.png">
+            <x:Arguments>
+                <views:Favorites/>
             </x:Arguments>
         </NavigationPage>
     </TabbedPage.Children>

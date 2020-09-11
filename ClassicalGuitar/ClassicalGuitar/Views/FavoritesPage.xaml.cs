@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace ClassicalGuitar.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Favorites : ContentPage
+    public partial class FavoritesPage : ContentPage
     {
-        public Favorites()
+        public FavoritesPage()
         {
             InitializeComponent();
         }
