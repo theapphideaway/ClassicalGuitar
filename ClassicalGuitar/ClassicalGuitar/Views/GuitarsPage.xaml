@@ -5,13 +5,7 @@
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
-        <Label x:Name="loadingLabel" 
-               Text="Loading"
-               HorizontalOptions="CenterAndExpand"
-               VerticalOptions="CenterAndExpand"
-               IsVisible="true"
-               />
-        <ListView x:Name="guitarLV"
+            <ListView x:Name="guitarLV"
             ItemsSource="{Binding Guitars}"
                   HasUnevenRows="true" 
                   SeparatorVisibility="None">

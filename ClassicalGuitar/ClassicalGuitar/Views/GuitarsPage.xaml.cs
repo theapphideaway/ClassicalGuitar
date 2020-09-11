@@ -1,5 +1,7 @@
 ﻿using ClassicalGuitar.Models;
+using ClassicalGuitar.Services;
 using ClassicalGuitar.ViewModels;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,15 +19,16 @@ namespace ClassicalGuitar.Views
         public GuitarsPage()
         {
             InitializeComponent();
-            BindingContext = new GuitarsViewModel();
+            using (ServiceProvider container = App.RegisterServices())
+            {
+                BindingContext = container.GetRequiredService<GuitarsViewModel>();
+            }
 
             //Remove Selected Item Background color but keep selected splash effect
             guitarLV.ItemTapped += (object sender, ItemTappedEventArgs e) => {
                 if (e.Item == null) return;
                 if (sender is ListView lv) lv.SelectedItem = null;
             };
-
-               
         }
     }
 }
