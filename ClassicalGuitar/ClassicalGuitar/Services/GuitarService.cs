@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ClassicalGuitar.Services
 {
-    class GuitarService: IGuitarService
+    public class GuitarService: IGuitarService
     {
 
         public async Task<GuitarsResponse> GetAllGuitarsAsync()

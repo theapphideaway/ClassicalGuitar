@@ -18,6 +18,7 @@ namespace ClassicalGuitar
         public static ServiceProvider RegisterServices()
         {
             var services = new ServiceCollection();
+            services.AddSingleton<IPageService, PageService>();
             services.AddSingleton<IGuitarService, GuitarService>();
             services.AddTransient<GuitarsViewModel>();
             return services.BuildServiceProvider();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassicalGuitar.Services
 {
-    interface IGuitarService
+    public interface IGuitarService
     {
         Task<GuitarsResponse> GetAllGuitarsAsync();
     }

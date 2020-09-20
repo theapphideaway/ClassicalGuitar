@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassicalGuitar.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,11 @@ namespace ClassicalGuitar.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GuitarDetailsPage : ContentPage
     {
-        public GuitarDetailsPage()
+        public GuitarDetailsPage(GuitarDetailsViewModel viewModel)
         {
             InitializeComponent();
+
+            BindingContext = viewModel;
         }
     }
 }

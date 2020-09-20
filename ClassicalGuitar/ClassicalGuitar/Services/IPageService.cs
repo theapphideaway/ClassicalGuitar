@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace ClassicalGuitar.Services
 {
-    interface IPageService
+    public interface IPageService
     {
         Task PushAsync(Page page);
         Task PushModalAsync(Page page);

@@ -10,7 +10,8 @@
             <ListView x:Name="guitarLV"
             ItemsSource="{Binding Guitars}"
                   HasUnevenRows="true" 
-                  SeparatorVisibility="None">
+                  SeparatorVisibility="None"
+                      SelectedItem="{Binding SelectedGuitar}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

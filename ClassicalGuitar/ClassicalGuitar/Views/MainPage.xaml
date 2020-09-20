@@ -23,7 +23,7 @@
         </NavigationPage>
         <NavigationPage Title="Favorites" Icon="baseline_star_black_18dp.png">
             <x:Arguments>
-                <views:Favorites/>
+                <views:FavoritesPage/>
             </x:Arguments>
         </NavigationPage>
     </TabbedPage.Children>
