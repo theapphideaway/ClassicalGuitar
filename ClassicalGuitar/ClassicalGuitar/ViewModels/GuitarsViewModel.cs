@@ -15,6 +15,7 @@ namespace ClassicalGuitar.ViewModels
     public class GuitarsViewModel: BaseViewModel
     {
         public ICommand SelectedGuitarCommand { get; set; }
+        public ICommand SearchCommand { get; set; }
 
         private readonly IGuitarService _guitarService;
         private IPageService _pageService;
@@ -27,6 +28,7 @@ namespace ClassicalGuitar.ViewModels
             _pageService = pageService;
 
             SelectedGuitarCommand = new Command(async () => await SelectGuitar());
+            SearchCommand = new Command<string>( (string queryText) =>  SearchGuitars(queryText));
 
             GetGuitars();
         }
@@ -39,6 +41,11 @@ namespace ClassicalGuitar.ViewModels
             {
                 Guitars.Add(guitar);
             }
+        }
+
+        private void SearchGuitars(string text)
+        {
+            Console.WriteLine(text);
         }
 
         private async Task SelectGuitar()

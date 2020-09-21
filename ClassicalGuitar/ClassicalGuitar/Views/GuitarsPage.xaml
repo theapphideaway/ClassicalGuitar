@@ -7,6 +7,10 @@
              ios:Page.UseSafeArea="true">
     <ContentPage.Content>
         <StackLayout>
+            <SearchBar x:Name="searchBar"
+                Placeholder="Search Guitars" 
+                       SearchCommand="{Binding SearchCommand}"
+                       SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"/>
             <ListView x:Name="guitarLV"
             ItemsSource="{Binding Guitars}"
                   HasUnevenRows="true" 
