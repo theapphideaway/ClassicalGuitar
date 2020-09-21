@@ -9,6 +9,7 @@
         <StackLayout>
             <SearchBar x:Name="searchBar"
                 Placeholder="Search Guitars" 
+                       Text="{Binding SearchText}"
                        SearchCommand="{Binding SearchCommand}"
                        SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"/>
             <ListView x:Name="guitarLV"
