@@ -31,6 +31,7 @@
                                            Text="{Binding GuitarName}"
                                             VerticalTextAlignment="End"
                                            VerticalOptions="StartAndExpand" 
+                                            TextColor="Black"
                                             FontSize="28"/>
 
                                         <Label 
@@ -38,6 +39,7 @@
                                             VerticalTextAlignment="End"
                                            VerticalOptions="CenterAndExpand" 
                                             FontSize="Subtitle"
+                                            TextColor="DarkGray"
                                             Margin="16,0,0,0"/>
 
                                         <Label 
@@ -45,6 +47,7 @@
                                             VerticalTextAlignment="End"
                                            VerticalOptions="EndAndExpand" 
                                             FontSize="Subtitle"
+                                            TextColor="DarkGray"
                                             Margin="16,0,0,0"/>
                                     </StackLayout>
                                 </StackLayout>

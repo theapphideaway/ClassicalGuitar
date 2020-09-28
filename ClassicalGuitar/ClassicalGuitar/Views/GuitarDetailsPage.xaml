@@ -3,10 +3,49 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ClassicalGuitar.Views.GuitarDetailsPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="{Binding Guitar.GuitarName}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="1.5*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Image 
+                Margin="0,8,0,0"
+                Source="{Binding Guitar.GuitarImage}" 
+                Aspect="AspectFit"/>
+            <StackLayout Grid.Column="1">
+
+                <Label 
+                    Text="{Binding Guitar.GuitarName}"
+                    VerticalOptions="StartAndExpand" 
+                    TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                    FontSize="48"/>
+                <Label 
+                    Text="{Binding Guitar.BodyType}"
+                    VerticalOptions="CenterAndExpand" 
+                    FontSize="24"
+                    TextColor="DarkGray"
+                    Margin="16,0,0,16"/>
+                <Label 
+                    Text="{Binding Guitar.GuitarTop}"
+                    VerticalOptions="StartAndExpand" 
+                    FontSize="24"
+                    TextColor="DarkGray"
+                    Margin="16,0,0,0"/>
+
+            </StackLayout>
+            <Label Grid.Row="1"
+                     Grid.ColumnSpan="2"
+                    Text="{Binding Guitar.GuitarDescription}"
+                    FontSize="24"
+                    TextColor="DarkGray"
+                    Margin="8"
+                   />
+        </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
